@@ -12,7 +12,7 @@ class One extends React.Component
   }
   myClick = () => {
     this.setState({
-      isShown:false
+      isShown:true
     })
   }
   render()
