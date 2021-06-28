@@ -1,0 +1,18 @@
+import React from 'react';
+import './styles.css'
+import MyComponent from './hoc';
+
+class One extends React.Component
+{
+  render()
+  {
+    return(
+      <div>
+      <h1>{this.props.count}</h1>
+      <button onClick={this.props.func}>Click</button>
+      </div>
+    )
+  }
+}
+
+export default MyComponent(One);

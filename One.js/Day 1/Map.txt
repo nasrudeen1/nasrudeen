@@ -1,0 +1,30 @@
+import React from 'react';
+import './styles.css'
+
+class One extends React.Component
+{
+  constructor()
+  {
+    super();
+    this.state = {
+      data : [{id:1,name:"cheetah"},{id:2,name:"tiger"}]
+    }
+  }
+  myClick = () => {
+    this.setState({
+      isShown:true
+    })
+  }
+  render()
+  {
+    return(
+      <ul>
+        {
+          this.state.data.map(e => <li>{e.name}</li>)
+        }
+      </ul>
+    )
+  }
+}
+
+export default One;

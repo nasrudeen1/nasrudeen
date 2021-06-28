@@ -1,0 +1,47 @@
+import React from 'react';
+import ReactDOM from 'react-dom'
+import { createStore } from 'redux'
+
+function Increment()
+{
+  return{
+    type:"INCREMENT"
+  }
+}
+
+function Decrement()
+{
+  return{
+    type:"DECREMENT"
+  }
+}
+
+function Reducers(state = 0,action)
+{
+  switch(action.type){
+    case "INCREMENT" :
+    return state + action.payload
+    case "DECREMENT" :
+    return state -1
+    default :
+    return state
+  }
+}
+
+let Store = createStore(Reducers);
+Store.subscribe(() => console.log(Store.getState()));
+
+Store.dispatch({type:"INCREMENT",payload:2});
+
+
+function Layout()
+{
+  return(
+    <h1>Hii Subscribe</h1>
+  )
+}
+
+
+ReactDOM.render(<Layout/>,document.getElementById('root'));
+
+

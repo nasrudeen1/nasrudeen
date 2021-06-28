@@ -1,0 +1,34 @@
+import React from 'react';
+import './styles.css'
+
+class One extends React.Component
+{
+  constructor()
+  {
+    super();
+    this.state = {
+      val:""
+    }
+  }
+myChange = (e) => {
+  this.setState({
+    val:e.target.value
+  })
+}
+mySubmit = () => {
+  alert(this.state.val);
+}
+
+  render()
+  {
+    return(
+      <form onSubmit={this.mySubmit}>
+        <input type="text" value={this.state.val}
+        onChange={this.myChange} />
+      </form>
+      
+    )
+  }
+}
+
+export default One;
